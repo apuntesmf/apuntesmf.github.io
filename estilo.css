@@ -1,4 +1,13 @@
 h1{
-    color:black;
+    color: black;
     text-align: center;
 }
+
+td, th {
+    border: 1px solid, color #dddddd ;
+    text-align:left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
