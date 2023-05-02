@@ -8,6 +8,9 @@
     <title>ApuntesMF</title>
 </head>
 <body>
+    <div class="bg-primary p-3">
+        <h1>Dosis Pediatricas</h1>
+    </div> 
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
@@ -27,7 +30,6 @@
                                 <li><a class="dropdown-item" href="medicamentos.html">Medicamentos</a></li>
                                 <li><a class="dropdown-item" href="liquidos.html">Manejo de liquidos</a></li>
                             </ul>
-                    
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="programa.html">Programa</a>
@@ -36,11 +38,10 @@
             </div>
         </div>
     </nav>
-    <div class="row">
-        <div class="col-lg-12"><h1>Dosis Pediatricas</h1></div>
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-            <table> 
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-9">
+                <table> 
                 <tr>
                     <th>Medicamentos<br>Antibioticos</th>
                     <th>Presentaciones</th>
@@ -81,9 +82,9 @@
                     <td>250mg/5ml</td>
                     <td>12.5mg-25mg/kg/día cada 6 hrs.</td>
                 </tr>
-            </table>
+                </table>
 
-            <table>
+                <table>
                 <tr>
                     <th>Medicamentos<br>Benzodiazepinas</th>
                     <th>Presentaciones</th>
@@ -99,9 +100,9 @@
                   <td>15mg/3ml</td>
                   <td>0.2mg/kg<br>Maximo 10mg/Dosis</td>
                 </tr>
-            </table>
+                </table>
 
-            <table>
+                <table>
                 <tr>
                     <th>Medicamentos</th>
                     <th>Presentaciones</th>
@@ -112,9 +113,9 @@
                     <td>250mg/5ml</td>
                     <td>15-20mg/kg Dosis de carga<br>5-10mg/kg/dia dosis de mantenimiento</td>
                 </tr>
-            </table>
+                </table>
 
-            <table>
+                <table>
                 <tr>
                     <th>Medicamentos<br>Antihemetico</th>
                     <th>Presentaciones</th>
@@ -130,9 +131,9 @@
                   <td>.15mg/kg/dosis</td>
                   <td>8mg/2ml</td>
                 </tr>
-            </table>
+                </table>
 
-            <table>
+                <table>
                 <tr>
                     <th>Medicamentos<br>Inhalados</th>
                     <th>Presentaciones</th>
@@ -143,10 +144,18 @@
                     <td>.03ml/kg</td>
                     <td>5mg/ml Nebulizado</td>
                 </tr>
-            </table>
-
+                </table>
+            </div>
+        <div class="col-lg-3">
+            <h2>Calculadora</h2>
+            <input type="text" class="form-control form-control-sm" id="kg" name="kg" placeholder="Kg">
+            <input type="text" class="form-control form-control-sm" id="mg" name="mg" placeholder="mg">
+            <input type="text" class="form-control form-control-sm" id="ml" name="ml" placeholder="ml">
+            <input type="text" class="form-control form-control-sm" id="dosis" name="dosis" placeholder="dosis"><br>
+            <button type="button" id="Solve" class="btn btn-primary" onClick="calc(this)">Dosis</button>
+            <p id="resultado" name="r1">Resultado</p>
         </div>
-        <div class="col-lg-3"></div>
+
     </div>
 </body>
 </html>
