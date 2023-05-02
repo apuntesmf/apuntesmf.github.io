@@ -11,3 +11,15 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
   }
+#stik{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 30px;
+    height: 50px;
+}
+#stik2{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    height: 30px;
+}

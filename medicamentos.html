@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html>
+    <script>
+        function calc(form){
+            var A = document.getElementById("kg").value;
+            var B = document.getElementById("mg").value;
+            var C = document.getElementById("ml").value;
+            var D = document.getElementById("dosis").value;
+            var E = document.getElementById("hrs").value;
+            var F = "0";
+
+            if (document.getElementById("dia").checked){
+                var F = (((A * D) * (C *10)) / B)/E;
+                var F = F.toFixed(2)
+                document.getElementById("resultado").innerHTML = F;
+                return false;
+            }
+            else{
+                var F = (((A * D) * C) / B);
+                var F = F.toFixed(2)
+                document.getElementById("resultado").innerHTML = F;
+                return false;
+            }
+            
+        }
+    </script>
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="estilo.css">
@@ -11,7 +35,7 @@
     <div class="bg-primary p-3">
         <h1>Dosis Pediatricas</h1>
     </div> 
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <nav id="stik2" class="navbar navbar-expand-sm bg-light navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <img src="logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
@@ -40,7 +64,7 @@
     </nav>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-10">
                 <table> 
                 <tr>
                     <th>Medicamentos<br>Antibioticos</th>
@@ -145,14 +169,17 @@
                     <td>5mg/ml Nebulizado</td>
                 </tr>
                 </table>
-            </div>
-        <div class="col-lg-3">
+            </div>   
+        <div id="stik" class="col-lg-2">
             <h2>Calculadora</h2>
-            <input type="text" class="form-control form-control-sm" id="kg" name="kg" placeholder="Kg">
-            <input type="text" class="form-control form-control-sm" id="mg" name="mg" placeholder="mg">
-            <input type="text" class="form-control form-control-sm" id="ml" name="ml" placeholder="ml">
-            <input type="text" class="form-control form-control-sm" id="dosis" name="dosis" placeholder="dosis"><br>
-            <button type="button" id="Solve" class="btn btn-primary" onClick="calc(this)">Dosis</button>
+            Kg<input type="text" class="form-control form-control-sm" id="kg" name="kg" placeholder="Kg">
+            Mg<input type="text" class="form-control form-control-sm" id="mg" name="mg" placeholder="mg">
+            Ml<input type="text" class="form-control form-control-sm" id="ml" name="ml" placeholder="ml">
+            Dosis<input type="text" class="form-control form-control-sm" id="dosis" name="dosis" placeholder="dosis">
+            Veces<input type="text" class="form-control form-control-sm" id="hrs" name="hrs" placeholder="Veces">
+            <input type="radio" class="form-check-input" id="dia" name="optradio" value="option1" checked>Dia
+            <input type="radio" class="form-check-input" id="dosis" name="optradio" value="option2" checked>Dosis<br><br>
+            <button type="button" id="Solve" class="btn btn-primary" onClick="calc(this)">Calcular</button>
             <p id="resultado" name="r1">Resultado</p>
         </div>
 

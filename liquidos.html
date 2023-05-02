@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <html>
+    <script>
+        function calc(form){
+            var A = document.getElementById("kg").value;
+            var B = document.getElementById("ml").value;
+            var C = document.getElementById("hrs").value;
+            var D = "0";
+
+            if (document.getElementById("m2SC").checked){
+                if (A < 10){
+                    var D = (((parseInt(A) * 4)) + 9) / 100;
+                    var D = (D * B) / C; 
+                    document.getElementById("resultado").innerHTML = D;
+                    return false;
+                }
+                else{
+                    var F = (((parseInt(A) * 4)) + 7) / (parseInt(A) + 90);
+                    var F = F * B
+                    var D = F / C
+                    var D = D.toFixed(2)
+                    document.getElementById("resultado").innerHTML = D;
+                    return false;
+                }
+                
+            }
+            else{
+                var F = (((parseFloat(A) * parseFloat(D)) * parseFloat(C)) / parseFloat(B));
+                var F = F.toFixed(2)
+                document.getElementById("resultado").innerHTML = F;
+                return false;
+            }
+            
+        }
+    </script>
     <head>
         <title>ApuntesMF</title>
         <meta charset="utf-8">
@@ -8,7 +41,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="bg-primary p-3">
+            <h1>Dosis Pediatricas</h1>
+        </div>
+        <nav id="stik2" class="navbar navbar-expand-sm bg-light navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <img src="logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
@@ -36,11 +72,10 @@
                 </div>
             </div>
         </nav>
-        <div class="row">
-            <div class="col-lg-12"><h1>Manejo de Liquidos</h1></div>
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6">
-                <table>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                    <table>
                     <tr>
                         <th>Por superficie Corporal</th>
                         <th>Calculo</th>
@@ -56,8 +91,8 @@
                         <td>Kg * 4 + 7 / (90 + Kg)</td>
                         <td>Bajo  800 ml- 1000 ml/m2SC/día<br>Normal  1200 ml- 1500 ml/m2SC/día<br>Alto  1800 ml- 2000 ml/m2SC/día</td>
                     </tr>
-                </table>
-                <table>
+                    </table>
+                    <table>
                     <tr>
                         <th>Holliday-Segar</th>
                         <th>Calculo</th>
@@ -73,10 +108,20 @@
                         <td></td>
                         <td>Por cada kg por encima de 20kg, agregar 20ml/kg/día</td>
                     </tr>
-                </table>
-    
+                    </table>
+                </div>
+
+            <div id="stik" class="col-lg-2">
+                <h2>Calculadora</h2>
+                Kg<input type="text" class="form-control form-control-sm" id="kg" name="kg" placeholder="Kg">
+                Ml<input type="text" class="form-control form-control-sm" id="ml" name="ml" placeholder="ml">
+                Veces<input type="text" class="form-control form-control-sm" id="hrs" name="hrs" placeholder="Veces">
+                <input type="radio" class="form-check-input" id="m2SC" name="optradio" value="option1" checked>m2SC
+                <input type="radio" class="form-check-input" id="HS" name="optradio" value="option2" checked>Holliday-Segar<br><br>
+                <button type="button" id="Solve" class="btn btn-primary" onClick="calc(this)">Calcular</button>
+                <p id="resultado" name="r1">Resultado</p>
             </div>
-            <div class="col-lg-3"></div>
+            </div>
         </div>        
     </body>
 
