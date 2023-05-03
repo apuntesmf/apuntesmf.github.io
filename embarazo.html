@@ -10,8 +10,8 @@
     </head>
     <body>
         <div class="bg-primary p-3">
-            <h1>Dosis Pediatricas</h1>
-        </div>
+            <h1>Apuntes MF</h1>
+        </div> 
         <nav id="stik2" class="navbar navbar-expand-sm bg-light navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
@@ -46,54 +46,22 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-10">
-                    <table>
-                    <tr>
-                        <th>Por superficie Corporal</th>
-                        <th>Calculo</th>
-                        <th>Requerimiento</th>
-                    </tr>
-                    <tr>
-                        <td>Menores de  10 Kg</td>
-                        <td>Kg x 4 + 9 / 100</td>
-                        <td>Bajo  80ml- 100 ml/kg/día<br>Normal  120ml- 150 ml/kg/día<br>Alto  180ml- 200 ml/kg/día</td>
-                    </tr>
-                    <tr>
-                        <td>Mayores de 10Kg</td>
-                        <td>Kg * 4 + 7 / (90 + Kg)</td>
-                        <td>Bajo  800 ml- 1000 ml/m2SC/día<br>Normal  1200 ml- 1500 ml/m2SC/día<br>Alto  1800 ml- 2000 ml/m2SC/día</td>
-                    </tr>
-                    </table>
-                    <table>
-                    <tr>
-                        <th>Holliday-Segar</th>
-                        <th>Calculo</th>
-                        <th>Requerimiento</th>
-                    </tr>
-                    <tr>
-                        <td>Primeros 10kg: 100ml/kg/día</td>
-                        <td>10kg -20kg</td>
-                        <td>Por kada kg por encima de 10kg, agregar 50ml/kg/día</td>
-                    </tr>
-                    <tr>
-                        <td>Mayores de 20Kg</td>
-                        <td></td>
-                        <td>Por cada kg por encima de 20kg, agregar 20ml/kg/día</td>
-                    </tr>
-                    </table>
+                    
                 </div>
-
             <div id="stik" class="col-lg-2">
                 <h2>Calculadora</h2>
-                Kg<input type="text" class="form-control form-control-sm" id="kg" name="kg" placeholder="Kg">
-                Ml<input type="text" class="form-control form-control-sm" id="ml" name="ml" placeholder="ml">
-                Veces<input type="text" class="form-control form-control-sm" id="hrs" name="hrs" placeholder="Veces">
-                <input type="radio" class="form-check-input" id="m2SC" name="optradio" value="option1" checked>m2SC
-                <input type="radio" class="form-check-input" id="HS" name="optradio" value="option2" checked>Holliday-Segar<br><br>
-                <button type="button" id="Solve" class="btn btn-primary" onClick="calc(this)">Calcular</button>
+                Dia<input type="text" class="form-control form-control-sm" id="dia" name="dia" placeholder="1-31">
+                Mes
+                <select class="form-select" id="mes" name="mes">
+                  <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                </select>
+                ano<input type="text" class="form-control form-control-sm" id="ano" name="ano" placeholder="2021"><br>
+                <button type="button" id="Solve" class="btn btn-primary" onClick="emb(this)">Calcular</button>
                 <p id="resultado" name="r1">Resultado</p>
             </div>
             </div>
-        </div>        
+    
+        </div>         
     </body>
 
 </html>
