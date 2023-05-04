@@ -23,3 +23,6 @@ tr:nth-child(even) {
     top: 0px;
     height: 30px;
 }
+#selector{
+    background-color: #dddddd;
+}
