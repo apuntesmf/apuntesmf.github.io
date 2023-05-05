@@ -1,15 +1,48 @@
 h1{
     color: black;
     text-align: center;
-}
+    }
 
 td, th {
     border: 1px solid, color #dddddd ;
     text-align:left;
     padding: 8px;
-}
+    }
+
 tr:nth-child(even) {
     background-color: #dddddd;
+  }
+
+.header{
+    display:flex;
+    margin: auto;
+    width: auto;
+    height: 500px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f2937
+}
+.header1{
+    width: 35%;
+    
+    }
+.txt1{
+    color:aliceblue;
+    font-size: 18px;
+    width: 60%;
+    margin: 20px;
+    font-weight: bold;
+}
+.img-p{
+    width: 500px;
+    margin-right: 40px;
+}
+.c-principal{
+    color: #f9faf8;
+}
+img {
+    max-width: 100%;
+    height: auto;
   }
 #stik{
     position: sticky;
@@ -17,6 +50,37 @@ tr:nth-child(even) {
     top: 30px;
     height: 50px;
 }
+.central{
+    display: flex;
+}
+.extra{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-evenly;
+    width: 70%;
+    height: auto;
+}
+
+.pie{
+    display: flex;
+    margin: auto;
+    width: auto;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f2937;
+}
+.fondo{
+    background-color: #1f2937;
+    color: #f9faf8;
+    font-size: 24px;
+}
+.b_izq .fondo{
+    display: flex;
+}
+
 #stik2{
     position: sticky;
     position: -webkit-sticky;
@@ -26,3 +90,49 @@ tr:nth-child(even) {
 #selector{
     background-color: #dddddd;
 }
+
+.envoltura{
+    display:flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    align-items:center;
+    margin: 15px;
+}
+
+.imagen{
+    border:1px solid black;
+    flex: 3px;
+}
+.info{
+    border:1px solid black;
+    flex: 3px;;
+    
+}
+.envoltura2{
+    display:flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items:center;
+    margin: 15px;
+}
+
+.lateralizq{
+    border: 1px solid black;
+    flex: 4px;
+    margin: 15px;
+    justify-content: center;
+    text-align: center;
+    }
+
+.laterald{
+    border: 1px solid black;
+    flex: 4px;
+    margin: 15px;
+    justify-content: center;
+    text-align: center;
+    }
+
+.otro{
+    border: 4px brown;
+    }
+

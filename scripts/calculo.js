@@ -259,6 +259,7 @@ function selec(form){
     if (sdg <14){
         const element = document.getElementById('selector');
         element.style.backgroundColor = 'green';
+        element.hide('#selector2');
     }
     else if( sdg >=14 && sdg <=24){
         const element2 = document.getElementById('selector2');
