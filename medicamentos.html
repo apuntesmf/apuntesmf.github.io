@@ -3,111 +3,100 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="src/estilo.css">
+    <link rel="stylesheet" href="estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/calculo.js"></script>
 </head>
 <body>
-    <header class="head" id="stik2">
-        <div class="logo"><a href="index.html">Logo</a></div>
-
-
-        <nav>
-            <ul class="nav_links">
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Pediatria</a>
-                    <div class="dropdown-content">
-                        <a href="medicamentos.html">Medicamentos</a>
-                        <a href="liquidos.html">Manejo de liquidos</a>
-                    </div>
-                </li>
-                <li><a href="embarazo.html">Embarazo</a></li>
-                <li><a href="programa.html">Programa</a></li>
-                <li><a href="ejercicios.html">Ejercicios</a></li>
-                <li><a href="nota.html">Notas</a></li>
-            </ul>
-        </nav>
-        <div class="titulo"><h1>Medicamentos</h1></div>
+    <nav id="stik2" class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Ejercicios.html">Ejercicios</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class = "nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pediatria</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="medicamentos.html">Medicamentos</a></li>
+                                <li><a class="dropdown-item" href="liquidos.html">Manejo de liquidos</a></li>
+                            </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="embarazo.html">Embarazo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programa.html">Programa</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="fondo">
+        <div class="header">
+            <div class="header1">
+                <h1>Dosis Pediatricas</h1>
+                <P class="txt1">
+                Area para el calculo de medicamentos.
+                </P>
+            </div>
+            <div class="img-p">
+                <img src="src/img/perro.jpg"></img>
+            </div>
+        </div>
     </header>
+    <div class="central">
+        <div class="extra">
+            <table> 
+                <tr>
+                    <th>Medicamentos<br>Antibioticos</th>
+                    <th>Presentaciones</th>
+                    <th>Dosis</th>
+                </tr>
+                <tr>
+                    <td>Amoxicilina</td>
+                    <td>250mg/5ml</td>
+                    <td>25-100mg mg/kg/día cada 8 hrs a 12 hrs(100mg/kg/día).</td>
+                </tr>
+                <tr>
+                    <td>Amoxicilina/clavulanato</td>
+                    <td>125mg/31.25mg/5ml<br>200mg/28.5mg/5ml.</td>
+                    <td>45mg-90mg/kg/día cada 12 hrs.</td>
+                </tr>
+                <tr>
+                  <td>Ampicilina</td>
+                  <td>250mg/5ml<br>125mg/5ml</td>
+                  <td>200mg/kg/día dividido cada  6 hrs.</td>
+                </tr>
+                <tr>
+                    <td>Amikacina</td>
+                    <td>250mg/2ml ampula</td>
+                    <td>7.5mg/kg cada 12 hrs.</td>
+                </tr>
+                <tr>
+                    <td>Clindamicina</td>
+                    <td>75mg/5ml</td>
+                    <td>8mg-30mg/kg/día cada 6 a 8 horas.</td>
+                </tr>
+                <tr>
+                    <td>Claritromicina</td>
+                    <td>250mg/5ml</td>
+                    <td>15mg/kg/día cada 12 horas.</td>
+                </tr>
+                <tr>
+                    <td>Dicloxacilina</td>
+                    <td>250mg/5ml</td>
+                    <td>12.5mg-25mg/kg/día cada 6 hrs.</td>
+                </tr>
+            </table>
 
-    <div class="container">
-        <div class="tablas">
-            <table>
-                    <tr>
-                        <th>Medicamentos<br>Aines-Analgesicos</th>
-                        <th>Presentaciones</th>
-                        <th>Dosis</th>
-                    </tr>
-                    <tr>
-                        <td>Paracetamol</td>
-                        <td>15/kg/dosis</td>
-                        <td>100mg/ml gotero<br>125mg/5ml suspension</td>
-                    </tr>
-                    <tr>
-                      <td>Ibuprofeno</td>
-                      <td>5-10mg/kg/dosis</td>
-                      <td>2g/100ml solucion<br>40mg/1ml suspension<br>100mg/5ml suspension</td>
-                    </tr>
-                    <tr>
-                        <td>Metamizol sodico</td>
-                        <td>15mg/kg/dosis</td>
-                        <td>1g/2ml Sol. inyectable</td>
-                      </tr>
-                    <tr>
-                        <td>Naproxeno</td>
-                        <td>5-10mg/kg/dosis</td>
-                        <td>125mg/5ml suspension<br>125mg/5ml suspension</td>
-                    </tr>
-            </table>
-            <table>
-                    <tr>
-                        <th>Medicamentos<br>Antibioticos</th>
-                        <th>Presentaciones</th>
-                        <th>Dosis</th>
-                    </tr>
-                    <tr>
-                        <td>Amoxicilina</td>
-                        <td>125mg/5ml suspension<br>250mg/5ml suspension<br>500mg/5ml suspension</td>
-                        <td>25-100mg mg/kg/día cada 8 hrs a 12 hrs(100mg/kg/día).</td>
-                    </tr>
-                    <tr>
-                        <td>Amoxicilina/clavulanato</td>
-                        <td>125mg/31.25mg/5ml<br>200mg/28.5mg/5ml.</td>
-                        <td>45mg-90mg/kg/día cada 8 a 12 hrs.</td>
-                    </tr>
-                    <tr>
-                      <td>Ampicilina</td>
-                      <td>250mg/5ml<br>125mg/5ml</td>
-                      <td>200mg/kg/día dividido cada  6 hrs.</td>
-                    </tr>
-                    <tr>
-                        <td>Amikacina</td>
-                        <td>250mg/2ml ampula</td>
-                        <td>7.5mg/kg cada 12 hrs.</td>
-                    </tr>
-                    <tr>
-                        <td>Clindamicina</td>
-                        <td>75mg/5ml</td>
-                        <td>8mg-30mg/kg/día cada 6 a 8 horas.</td>
-                    </tr>
-                    <tr>
-                        <td>Claritromicina</td>
-                        <td>250mg/5ml</td>
-                        <td>15mg/kg/día cada 12 horas.</td>
-                    </tr>
-                    <tr>
-                        <td>Dicloxacilina</td>
-                        <td>250mg/5ml</td>
-                        <td>12.5mg-25mg/kg/día cada 6 hrs.</td>
-                    </tr>
-                    <tr>
-                        <td>Trimetoprim/sulfametoxazol</td>
-                        <td>40mg/200mg/5ml suspension<br></td>
-                        <td>8mg-12mg/kg/día cada 12 hrs.</td>
-                    </tr>
-            </table>
             <table>
                 <tr>
                     <th>Medicamentos<br>Benzodiazepinas</th>
@@ -120,62 +109,62 @@
                     <td>0.15-0.5 mg/kg<br>Maximo 10mg/Dosis.</td>
                 </tr>
                 <tr>
-                    <td>Midazolam</td>
-                    <td>15mg/3ml</td>
-                    <td>0.2mg/kg<br>Maximo 10mg/Dosis</td>
+                  <td>Midazolam</td>
+                  <td>15mg/3ml</td>
+                  <td>0.2mg/kg<br>Maximo 10mg/Dosis</td>
                 </tr>
             </table>
 
             <table>
-                    <tr>
-                        <th>Medicamentos</th>
-                        <th>Presentaciones</th>
-                        <th>Dosis</th>
-                    </tr>
-                    <tr>
-                        <td>Fenitoina</td>
-                        <td>250mg/5ml</td>
-                        <td>15-20mg/kg Dosis de carga<br>5-10mg/kg/dia dosis de mantenimiento</td>
-                    </tr>
+                <tr>
+                    <th>Medicamentos</th>
+                    <th>Presentaciones</th>
+                    <th>Dosis</th>
+                </tr>
+                <tr>
+                    <td>Fenitoina</td>
+                    <td>250mg/5ml</td>
+                    <td>15-20mg/kg Dosis de carga<br>5-10mg/kg/dia dosis de mantenimiento</td>
+                </tr>
             </table>
 
             <table>
-                    <tr>
-                        <th>Medicamentos<br>Antihemetico</th>
-                        <th>Presentaciones</th>
-                        <th>Dosis</th>
-                    </tr>
-                    <tr>
-                        <td>Metoclopramida</td>
-                        <td>.1-.2mg/kg/dosis</td>
-                        <td>Solucion 4mg/20ml<br>Inyectable 10mg/2ml</td>
-                    </tr>
-                    <tr>
-                      <td>Ondansetron</td>
-                      <td>.15mg/kg/dosis</td>
-                      <td>8mg/2ml</td>
-                    </tr>
+                <tr>
+                    <th>Medicamentos<br>Antihemetico</th>
+                    <th>Presentaciones</th>
+                    <th>Dosis</th>
+                </tr>
+                <tr>
+                    <td>Metoclopramida</td>
+                    <td>.1-.2mg/kg/dosis</td>
+                    <td>Solucion 4mg/20ml<br>Inyectable 10mg/2ml</td>
+                </tr>
+                <tr>
+                  <td>Ondansetron</td>
+                  <td>.15mg/kg/dosis</td>
+                  <td>8mg/2ml</td>
+                </tr>
             </table>
 
             <table>
-                    <tr>
-                        <th>Medicamentos<br>Inhalados</th>
-                        <th>Presentaciones</th>
-                        <th>Dosis</th>
-                    </tr>
-                    <tr>
-                        <td>Salbutamol</td>
-                        <td>.03ml/kg</td>
-                        <td>5mg/ml Nebulizado</td>
-                    </tr>
-                    <tr>
-                        <td>Ipratropio/salbutamol</td>
-                        <td>.15ml/kg</td>
-                        <td>0.5mg/2.5mg/2.5ml Nebulizado</td>
-                    </tr>
+                <tr>
+                    <th>Medicamentos<br>Inhalados</th>
+                    <th>Presentaciones</th>
+                    <th>Dosis</th>
+                </tr>
+                <tr>
+                    <td>Salbutamol</td>
+                    <td>.03ml/kg</td>
+                    <td>5mg/ml Nebulizado</td>
+                </tr>
+                <tr>
+                    <td>Ipratropio/salbutamol</td>
+                    <td>.15ml/kg</td>
+                    <td>0.5mg/2.5mg/2.5ml Nebulizado</td>
+                </tr>
             </table>
         </div>
-        <div class="calculo"id="stik">
+        <div id="stik">
             <h2>Calculadora</h2>
             Kg<input type="text" class="form-control form-control-sm" id="kg" name="kg" placeholder="Kg">
             Mg<input type="text" class="form-control form-control-sm" id="mg" name="mg" placeholder="mg">
@@ -188,5 +177,12 @@
             <p id="resultado" name="r1">Resultado</p>
         </div>
     </div>
+    <div class="pie">
+        <footer class="fondo">
+            <div class="b-izq">
+                Apuntesmf 2023
+            </div>
+        </footer>
+    </div> 
 </body>
 </html>
