@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ApuntesMF</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="src/estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="gnota.js"></script>
+</head>
+
+<body>
+  <header class="head" id="stik2">
+
+    <div class="logo"><a href="index.html">Logo</a></div>
+
+    <div class="menu">
+      <nav>
+        <ul class="nav_links">
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Pediatria</a>
+            <div class="dropdown-content">
+              <a href="medicamentos.html">Medicamentos</a>
+              <a href="liquidos.html">Manejo de liquidos</a>
+            </div>
+          </li>
+          <li><a href="embarazo.html">Embarazo</a></li>
+          <li><a href="programa.html">Programa</a></li>
+          <li><a href="ejercicios.html">Ejercicios</a></li>
+          <li><a href="nota.html">Notas</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="titulo">
+      <h1>Nota</h1>
+    </div>
+  </header>
+
+  <div class="container-vacio">
+    <div class="container-nota">
+      <div class="datos-personales">
+        <h5>Datos personales</h5>
+        <p>Nombre:<input type="text" class="form-control form-control-sm" id="nombre" name="nombre" placeholder="Nombre"></p>
+        <p>Apellido Paterno:<input type="text" class="form-control form-control-sm" id="apellido-paterno" name="apellido-paterno" placeholder="Apellido-paterno"></p>
+        <P>Apellido Materno:<input type="text" class="form-control form-control-sm" id="apellido-materno" name="apellido-materno" placeholder="Apellido materno"></P>
+        <P>Fecha de nacimiento:<input type="text" class="form-control form-control-sm" id="fecha-nacimiento" name="fecha-naciemiento" placeholder="Fecha de nacimiento"></P>
+        <P>Edad:<input type="text" class="form-control form-control-sm" id="edad" name="edad" placeholder="Edad"></P>
+        <P>Sexo:<input type="text" class="form-control form-control-sm" id="sexo" name="sexo" placeholder="Sexo"></P>
+      </div>
+  
+      <div class="datos-pp">
+        <h5>Antecedentes Personales Patologicos</h5>
+        <p>Alergias:</p>
+        <textarea id="alergia" name="alergia" rows="2" cols="30">Alergias negadas, </textarea>
+        <p>Enfermedades:</p>
+        <textarea id="enfermedades" name="enfermedades" rows="2" cols="30">enfermedades negadas, </textarea>
+        <P>Cirugias:</P>
+        <textarea id="cirugias" name="cirugias" rows="2" cols="30">cirugias negadas, </textarea>
+        <P>Hospitalizaciones:</P>
+        <textarea id="hospitalizaciones" name="hospitalizaciones" rows="2" cols="30">hospitalizaciones negadas, </textarea>
+        <P>Traumatismos:</P>
+        <textarea id="traumatismo" name="traumatismo" rows="2" cols="30">traumatismos negados, </textarea>
+        <P>Transfusiones:</P>
+        <textarea id="transfusion" name="transfusion" rows="2" cols="30">transfusiones negadas.</textarea>
+      </div>
+  
+      <div class="datos-p">
+        <h5>Antecedentes Personales No Patologicos</h5>
+        <p>Etilismo:</p>
+        <textarea id="etilismo" name="etilismo" rows="2" cols="30">Etilismo negado, </textarea>
+        <p>Tabaquismo:</p>
+        <textarea id="tabaquismo" name="tabaquismo" rows="2" cols="30">tabaquismo negado, </textarea>
+        <P>Toxicomanias:</P>
+        <textarea id="toxico" name="toxico" rows="2" cols="30">toxicomanias negadas.</textarea>
+        <h5>Antecedentes GyO</h5>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="container-vacio">
+    <div class="container-nota">
+        <div class="datos-ef">
+          <p>Neurologico:</p>
+          <textarea id="neuro" name="neuro" rows="3" cols="30">Consciente, alerta, cooperador, ubicado en sus tres esferas, </textarea>
+          <p>Piel:</p>
+          <textarea id="piel" name="piel" rows="3" cols="30">adecuada hidratación de piel y tegumentos, </textarea>
+          <p>Cabeza:</p>
+          <textarea id="cabeza" name="cabeza" rows="3" cols="30">cráneo normocéfalo, pupilas isocóricas normorreflécticas, narinas permeables, mucosa oral hidratada, sin presencia de exudados, </textarea>
+        </div>
+
+        <div class="datos-ef">
+          <P>Cuello:</P>
+          <textarea id="cuello" name="cuello" rows="3" cols="30">cuello cilíndrico sin presencia de adenomegalias, </textarea>
+          <P>Torax:</P>
+          <textarea id="torax" name="torax" rows="3" cols="30">tórax simétrico, campos pulmonares ventilados, murmullo vesicular presente sin presencia de estertores ni sibilancias, ruidos cardiacos rítmicos de buena intensidad sin ruidos agregados, </textarea>
+          <P>Abdomen:</P>
+          <textarea id="abdomen" name="abdomen" rows="3" cols="30">abdomen blando depresible, peristaltismo presente, sin datos de irritacion peritoneal, </textarea>
+        </div>
+
+          <div class="datos-ef">
+          <P>Genitales:</P>
+          <textarea id="genitales" name="genitales" rows="3" cols="30">exploracion diferida, </textarea>
+          <P>Extremidades:</P>
+          <textarea id="extremidad" name="extremidad" rows="3" cols="30">extremidades integras, arcos de movimiento conservados, llenado capilar inmediato.</textarea>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="container-analisis">
+    <div class="container-nota-analisis">
+
+      <div class="datos-p">
+        <h5>Actual:</h5>
+        <p>Padecimiento actual:</p>
+        <textarea id="pa" name="pa" rows="10" cols="50"></textarea>
+        <p>Diagnostico:</p>
+        <textarea id="dx" name="dx" rows="2" cols="50"></textarea>
+        <h5>Analisis</h5>
+        <p>Analisis:</p>
+        <textarea id="analisis" name="analisis" rows="10" cols="50"></textarea>
+      </div>
+
+      <div class="datos-p">
+        
+        <P>Plan:</P>
+        <textarea id="plan" name="plan" rows="10" cols="50"></textarea>
+        <p>Nota:</p>
+        <textarea id="final" name="final" rows="15" cols="50"></textarea>
+        <p><button type="button" class="btn btn-primary" onClick="nota(this)">Generar nota</button></p>
+      </div>
+    </div>
+  </div>
+  
+  
+    
+  
+</body>
+
+</html>
