@@ -47,10 +47,24 @@
         <P>Apellido Materno:<input type="text" class="form-control form-control-sm" id="apellido-materno" name="apellido-materno" placeholder="Apellido materno"></P>
         <P>Fecha de nacimiento:<input type="text" class="form-control form-control-sm" id="fecha-nacimiento" name="fecha-naciemiento" placeholder="Fecha de nacimiento"></P>
         <P>Edad:<input type="text" class="form-control form-control-sm" id="edad" name="edad" placeholder="Edad"></P>
-        <P>Sexo:<input type="text" class="form-control form-control-sm" id="sexo" name="sexo" placeholder="Sexo"></P>
+        <P>
+          Sexo:
+          <select class="form-select" id="sexo" name="sexo">
+            <option>Masculino</option>
+            <option>Femenino</option>
+          </select>
+        </P>
+        <P>Peso:<input type="text" class="form-control form-control-sm" id="peso" name="peso" placeholder="Kg"></P>
       </div>
   
       <div class="datos-pp">
+        <h5>Antecedentes Personales No Patologicos</h5>
+        <p>Etilismo:</p>
+        <textarea id="etilismo" name="etilismo" rows="2" cols="30">Etilismo negado, </textarea>
+        <p>Tabaquismo:</p>
+        <textarea id="tabaquismo" name="tabaquismo" rows="2" cols="30">tabaquismo negado, </textarea>
+        <P>Toxicomanias:</P>
+        <textarea id="toxico" name="toxico" rows="2" cols="30">toxicomanias negadas.</textarea>
         <h5>Antecedentes Personales Patologicos</h5>
         <p>Alergias:</p>
         <textarea id="alergia" name="alergia" rows="2" cols="30">Alergias negadas, </textarea>
@@ -66,17 +80,32 @@
         <textarea id="transfusion" name="transfusion" rows="2" cols="30">transfusiones negadas.</textarea>
       </div>
   
-      <div class="datos-p">
-        <h5>Antecedentes Personales No Patologicos</h5>
-        <p>Etilismo:</p>
-        <textarea id="etilismo" name="etilismo" rows="2" cols="30">Etilismo negado, </textarea>
-        <p>Tabaquismo:</p>
-        <textarea id="tabaquismo" name="tabaquismo" rows="2" cols="30">tabaquismo negado, </textarea>
-        <P>Toxicomanias:</P>
-        <textarea id="toxico" name="toxico" rows="2" cols="30">toxicomanias negadas.</textarea>
+      <div class="datos-g">
         <h5>Antecedentes GyO</h5>
-        
-        
+        <div>
+          <p>Menarca:</p>
+          <textarea id="menarca" name="menarca" rows="1" cols="5"></textarea>
+          <p>Ivsa:</p>
+          <textarea id="ivsa" name="ivsa" rows="1" cols="5"></textarea>
+          <P>Npsa:</P>
+          <textarea id="npsa" name="npsa" rows="1" cols="5"></textarea>
+        </div>
+        <div>
+          <P>Gestas:</P>
+          <textarea id="gesta" name="gesta" rows="1" cols="5"></textarea>
+          <P>Partos:</P>
+          <textarea id="parto" name="parto" rows="1" cols="5"></textarea>
+          <P>Cesareas:</P>
+          <textarea id="cesarea" name="cesarea" rows="1" cols="5"></textarea>
+        </div>
+        <div>
+          <P>Abortos:</P>
+          <textarea id="aborto" name="aborto" rows="1" cols="5"></textarea>
+          <P>Citologias:</P>
+          <textarea id="citologia" name="citologia" rows="1" cols="10"></textarea>
+          <P>Fecha de ultima menstruacion:</P>
+          <textarea id="fum" name="fum" rows="1" cols="10"></textarea>
+        </div>
       </div>
     </div>
   </div>

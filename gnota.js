@@ -1,5 +1,6 @@
 function nota(form){
     var nombre1 = document.getElementById("nombre").value+ document.getElementById("apellido-paterno").value+ document.getElementById("apellido-materno").value;
+    var dato = "\n\n" + document.getElementById("edad").value +" \n"+ document.getElementById("sexo").value + " \n" +document.getElementById("peso").value + "kg";
     var app = "\n\n App: " + document.getElementById("alergia").value + document.getElementById("enfermedades").value + document.getElementById("cirugias").value  + document.getElementById("hospitalizaciones").value  + document.getElementById("traumatismo").value + document.getElementById("transfusion").value;  
     var apnp = "\n\n Apnp: " + document.getElementById("etilismo").value + document.getElementById("tabaquismo").value + document.getElementById("toxico").value ;  
     var pa = "\n\n Pa:" + document.getElementById("pa").value;
@@ -9,5 +10,5 @@ function nota(form){
     var plan="\n\n Plan:"+ document.getElementById("analisis").value;
     var text= document.getElementById("final");
     
-    text.value = nombre1 + app + apnp + pa + ef + analisis+dx+plan;
+    text.value = nombre1 + dato + app + apnp + pa + ef + analisis+dx+plan;
 }
