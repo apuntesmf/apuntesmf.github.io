@@ -63,23 +63,59 @@
 }
 .container-vacio{
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .container-nota{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    align-items: center;
     gap: 5px;
     flex-wrap: wrap;
-    flex:1;
+}
+.nav-container{
+    display: -webkit-flex;
+    display: flex;
+    background-color: red;
+    min-height: 100%;
+}
+.sidenav{
+    background-color: lightgray;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.datos-personales{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.datos-pp{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.datos-g{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
 }
 container-analisis{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: row;
     align-items: center;
     gap: 5px;
     flex-wrap: wrap;
+    flex:1;
 }
 .container-nota-analisis{
     display: flex;
@@ -90,13 +126,12 @@ container-analisis{
     flex-wrap: wrap;
     flex:1;
 }
-.datos-p{
-    flex-wrap: wrap;
-}
+
 .datos-ef{
     flex-wrap: wrap;
     flex-direction: row;
 }
+
 .container-nota2{
     display: flex;
     justify-content: center;
@@ -111,7 +146,10 @@ container-analisis{
     gap: 5px;
     flex-wrap: wrap;
 }
-
+.boton-contenedor{
+    display: flex;
+    
+}
 .caja{
     display: flex;
     padding-bottom: 1%;
