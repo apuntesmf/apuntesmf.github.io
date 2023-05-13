@@ -1,20 +1,28 @@
-function calc(form){
+let calculo={
+    peso: document.getElementById("kg").value,
+    mg: document.getElementById("mg").value,
+    ml: document.getElementById("ml").value,
+    dosis: document.getElementById("dosis").value,
+    hrs: document.getElementById("hrs").value,
+};
+
+function calc(peso, mg, ml, dosis, hrs){
     var A = document.getElementById("kg").value;
     var B = document.getElementById("ml").value;
     var C = document.getElementById("hrs").value;
     var D = "0";
 
     if (document.getElementById("m2SC").checked){
-        if (A < 10){
-            var D = (((parseInt(A) * 4)) + 9) / 100;
-            var D = (D * B) / C; 
+        if (peso < 10){
+            let D = (((peso * 4)) + 9) / 100;
+            var D = (D * ml) / hrs; 
             document.getElementById("resultado").innerHTML = D;
-            return false;
+            return D;
         }
         else{
-            var F = (((parseInt(A) * 4)) + 7) / (parseInt(A) + 90);
-            var F = F * B
-            var D = F / C
+            var F = (((peso * 4)) + 7) / (peso + 90);
+            var F = F * ml
+            var D = F / hrs
             var D = D.toFixed(2)
             document.getElementById("resultado").innerHTML = D + " ml";
             return false;
@@ -22,25 +30,25 @@ function calc(form){
         
     }
     else{
-        if (A <= 10){
-            var D = A *  100
-            var D = D / C
+        if (peso <= 10){
+            var D = peso *  100
+            var D = D / hrs
             document.getElementById("resultado").innerHTML = D + " ml";
             return false;
         }
-        else if ( A >= 11 && A <= 20){
-            var E = A - 10
+        else if ( peso >= 11 && peso <= 20){
+            var E = peso - 10
             var E = E *  50
             var D = E + 1000  
-            var D = D / C
+            var D = D / hrs
             document.getElementById("resultado").innerHTML = D + " ml";
             return false;   
         }
         else{
-            var E = A - 20
+            var E = peso - 20
             var E = E * 20
             var D = E + 1500
-            var D = D / C
+            var D = D / hrs
             document.getElementById("resultado").innerHTML = D + " ml";
             return false;
         }
@@ -49,25 +57,18 @@ function calc(form){
     }
     
 }
-function calc2(form){
-    var A = document.getElementById("kg").value;
-    var B = document.getElementById("mg").value;
-    var C = document.getElementById("ml").value;
-    var D = document.getElementById("dosis").value;
-    var E = document.getElementById("hrs").value;
-    var F = "0";
 
+
+function calc2(form){
     if (document.getElementById("dia").checked){
         var F = (((A * D) * (C) / B)/E);
         var F = F.toFixed(2)
         document.getElementById("resultado").innerHTML = F + " ml.";
-        return false;
     }
     else{
         var F = (((A * D) * C) / B);
         var F = F.toFixed(2)
         document.getElementById("resultado").innerHTML = F + " ml.";
-        return false;
     }
     
 }

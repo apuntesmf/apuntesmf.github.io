@@ -9,34 +9,33 @@ function nota(form){
     var ef="\n\n Ef:" + document.getElementById("neuro").value + document.getElementById("piel").value + document.getElementById("cabeza").value + document.getElementById("cuello").value + document.getElementById("torax").value + document.getElementById("abdomen").value + document.getElementById("genitales").value + document.getElementById("extremidad").value;
     var analisis="\n\n Analisis:"+ document.getElementById("analisis").value;
     var dx="\n\n Diagnostico:"+ document.getElementById("idx").value;
-    var med ="";
     var plan="\n\n Plan:"+ document.getElementById("plan").value+"\n";
     var text= document.getElementById("final");
-    var doc= new jsPDF();
+    
     
     if(document.getElementById("sexo").value == "femenino"){
         text.value = nombre1 + dato + app + apnp + puta + pa + ef + analisis+dx+plan;
-        console.log(med);
     }else{
         text.value = nombre1 + dato + app + apnp + pa + ef + analisis+dx+plan;
-        doc.text(text,10,10);
-        doc.save('a4.pdf');
-    
     }
 }
 
 function indicaciones(form){
 
-    if (document.getElementById("alarma").value == "Deshidratacion"){
+
+    if (document.getElementById("alarma").value == "N/a Alarma"){
+        var text= document.getElementById("final");
+        text.value += "Medidas generales:\n"+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familair en caso de continuar con sintomatologia."; 
+     }else if (document.getElementById("alarma").value == "Deshidratacion"){
         var text= document.getElementById("final");
         text.value += "Medidas generales:\n"+"Datos de alarma(llanto sin lagrimas, hundimiento de ojos,irritabilidad, boca y lengua seca, llanto sin lagrimas, no presenta micciones)."+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familair en caso de continuar con sintomatologia."; 
-    }else if(document.getElementById("alarma").value == "Respiratoria"){
+        }else if(document.getElementById("alarma").value == "Respiratoria"){
         var text= document.getElementById("final");
-        text.value += "Medidas generales:\n"+"Datos de alarma(disnea, sibnilancias, piel que se unde entre costillas, cambio de coloracion de unas y labios). "+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familair en caso de continuar con sintomatologia.";
-    }else if(document.getElementById("alarma").value == "Obstetrica"){
+        text.value += "Medidas generales:\n"+"Datos de alarma(disnea, sibilancias, piel que se hunde entre costillas, cambio de coloración de unas y labios). "+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familair en caso de continuar con sintomatologia.";
+        }else if(document.getElementById("alarma").value == "Obstetrica"){
         var text= document.getElementById("final");
         text.value += "Medidas generales:\n"+"Datos de alarma(Sangrado vaginal,  convulsiones, falta de motilidad fetal, fiebre, dolor de cabeza, ver luces, escuchar zumbidos, dolor abdominal.) "+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familair en caso de continuar con sintomatologia.";
-    }
+        }
 }
 
 function calc(form){
@@ -99,22 +98,45 @@ function calc2(form){
     var D = document.getElementById("dosis").value;
     var E = document.getElementById("hrs").value;
     var F = "0";
+    if (A => 40){
+        var L = medicamento +" "+ B + " mg  cada "+ E +"hrs por "+document.getElementById("dias").value+" días";
+        var text= document.getElementById("final");
+        text.value += L+"\n";
+        return false;
+    }else{
+        if (document.getElementById("dia").checked){
+            var F = (((A * D) * (C) / B)/E);
+            var F = F.toFixed(2)
+            var L = medicamento +" "+ F + " ml  cada "+ E +"hrs por "+document.getElementById("dias").value+" días";
+            var text= document.getElementById("final");
+            text.value += L+"\n";
+            return false;
+        }
+        else{
+            var F = (((A * D) * C) / B);
+            var F = F.toFixed(2)
+            var L = medicamento + F + " ml  cada "+ E +"hrs por "+document.getElementById("dias").value+" días";
+            var text= document.getElementById("final");
+            text.value += L+"\n";
+            return false;
+        }
 
-    if (document.getElementById("dia").checked){
-        var F = (((A * D) * (C) / B)/E);
-        var F = F.toFixed(2)
-        var L = medicamento +" "+ F + " ml  cada "+ E +"hrs por "+document.getElementById("dias").value+" dias";
-        var text= document.getElementById("final");
-        text.value += L+"\n";
-        return false;
     }
-    else{
-        var F = (((A * D) * C) / B);
-        var F = F.toFixed(2)
-        var L = medicamento + F + " ml  cada "+ E +"hrs por "+document.getElementById("dias").value+" dias";
-        var text= document.getElementById("final");
-        text.value += L+"\n";
-        return false;
-    }
+    
 
 }
+
+function download(){
+    var nombre1 = document.getElementById("nombre").value+ document.getElementById("apellido-paterno").value+ document.getElementById("apellido-materno").value;
+    var text = document.getElementById("final").value;
+    text = text.replace(/\n/g, "\r\n"); 
+    var blob = new Blob([text], { type: "text/plain"});
+    var anchor = document.createElement("a");
+    anchor.download = nombre1+".txt";
+    anchor.href = window.URL.createObjectURL(blob);
+    anchor.target ="_blank";
+    anchor.style.display = "none"; 
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+ }
