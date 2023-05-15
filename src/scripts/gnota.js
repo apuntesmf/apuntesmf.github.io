@@ -20,12 +20,16 @@ function nota(form){
     var dx="\n\n Diagnostico:\n "+ document.getElementById("idx").value;
     var plan="\n\n Plan:\n "+ document.getElementById("plan").value+"\n";
     var text= document.getElementById("final");
-    
+    var doc= new jsPDF();
     
     if(document.getElementById("sexo").value == "femenino"){
         text.value = nombre1 + dato + app + apnp + puta + pa + ef + analisis+dx+plan;
+        console.log(med);
     }else{
         text.value = nombre1 + dato + app + apnp + pa + ef + analisis+dx+plan;
+        doc.text(text,10,10);
+        doc.save('a4.pdf');
+    
     }
 }
 
@@ -122,18 +126,3 @@ function calc2(form){
     }
 
 }
-
-function download(){
-    var nombre1 = document.getElementById("nombre").value+ document.getElementById("apellido-paterno").value+ document.getElementById("apellido-materno").value;
-    var text = document.getElementById("final").value;
-    text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
-    var blob = new Blob([text], { type: "text/plain"});
-    var anchor = document.createElement("a");
-    anchor.download = nombre1+".txt";
-    anchor.href = window.URL.createObjectURL(blob);
-    anchor.target ="_blank";
-    anchor.style.display = "none"; // just to be safe!
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
- }
