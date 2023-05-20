@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+  <script src="src/scripts/gnota.js"></script>
+  <title>ApuntesMF</title>
+</head>
+
+<body>
+  <header class="head" id="stik2">
+    <div class="logo"><a href="index.html">Logo</a></div>
+    <nav>
+      <ul class="nav_links">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Pediatria</a>
+          <div class="dropdown-content">
+            <a href="medicamentos.html">Medicamentos</a>
+            <a href="liquidos.html">Manejo de liquidos</a>
+          </div>
+        </li>
+        <li><a href="embarazo.html">Embarazo</a></li>
+        <li><a href="programa.html">Programa</a></li>
+        <li><a href="recomendaciones.html">Recomendaciones</a></li>
+        <li><a href="nota.html">Notas</a></li>
+      </ul>
+    </nav>
+    <div class="titulo">
+      <h1>Recomendaciones por SDG</h1>
+    </div>
+  </header>
+
+  <div class="container-embarazo">
+    <div class="tablas-emb">
+      <table>
+        <tr>
+          <th>< 14 sdg </th>
+        <tr>
+          <td id="selector">
+            <ul>
+              <li>Historia clinica e identificacion de riesgos.</li>
+              <li>Edad gestacional por fum.</li>
+              <li>Evaluacion tension arterial, peso materno e imc.</li>
+              <l>Verificacion de cartilla de vacunacion.</l>
+              <li>Referencia segun riesgo obstetrico.</li>
+              <li> USG para descarte de aneuploidia.</li>
+            </ul><br>
+            <ul>
+              <li>Bh, Glucosa, VDRL, prueba rapida VIH, Examen general de orina, urocultivo, papanicolaou.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+        <table>
+          <tr>
+            <th> 14 sdg - 24 sdg</th>
+          </tr>
+          <td id="selector2">
+            <ul>
+              <li>Frecuencia cardiaca fetal.</li>
+              <li>Altura Uterina.</li>
+              <li>Movimientos Fetales.</li>
+              <l>Evaluacion tension arterial, peso materno e imc.</l>
+              <li>Ultrasonido estructural entre la semana 18 - 22.</li>
+            </ul><br>
+            <ul>
+              <li>Determinacion de proteinuria por tira reactiva en orina.</li>
+            </ul>
+          </td>
+        </table>
+
+        <table>
+          <tr>
+            <th> 24 sdg - 28 sdg </th>
+          </tr>
+          <td id="selector3">
+            <ul>
+              <li>Frecuencia cardiaca fetal.</li>
+              <li>Altura Uterina.</li>
+              <li>Movimientos Fetales.</li>
+              <l>Evaluacion tension arterial, peso materno e imc.</l>
+              <li>Inmonoglobulina anti-d en la semana 28 en pacientes Rh negativas.</li>
+            </ul><br>
+            <ul>
+              <li>Determinacion de proteinuria por tira reactiva en orina.</li>
+              <li>Bh.</li>
+              <li>Curva de tolerancia a la glucosa.</li>
+            </ul>
+          </td>
+        </table>
+        <table>
+          <tr>
+            <th> 28 sdg - 34 sdg</th>
+          </tr>
+          <td id="selector4">
+            <ul>
+              <li>Frecuencia cardiaca fetal.</li>
+              <li>Altura Uterina.</li>
+              <li>Movimientos Fetales.</li>
+              <l>Evaluacion tension arterial, peso materno e imc.</l>
+              <li>Evaluacion de salud fetal mediante usg obstetrico.</li>
+            </ul><br>
+            <ul>
+              <li>Determinacion de proteinuria por tira reactiva en orina.</li>
+            </ul>
+          </td>
+        </table>
+        <table>
+          <tr>
+            <th> 34 sdg - 41 sdg</th>
+          </tr>
+          <td id="selector5">
+            <ul>
+              <li>Frecuencia cardiaca fetal.</li>
+              <li>Altura Uterina.</li>
+              <li>Movimientos Fetales.</li>
+              <l>Evaluacion tension arterial, peso materno e imc.</l>
+              <li>Inmonoglobulina anti-d en la semana 28 en pacientes Rh negativas.</li>
+            </ul><br>
+            <ul>
+              <li>Determinacion de proteinuria por tira reactiva en orina.</li>
+              <li>Bh.</li>
+              <li>Curva de tolerancia a la glucosa.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!--
+    <div class="calculo" id="stik">
+      <h2>Calculadora</h2>
+      Dia<input type="text" class="form-control form-control-sm" id="dia" name="dia" placeholder="1-31">
+      Mes
+      <select class="form-select" id="mes" name="mes">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      ano<input type="text" class="form-control form-control-sm" id="ano" name="ano" placeholder="2021"><br>
+      <button type="button" id="Solve" class="btn btn-primary" onClick="emb(this)">Calcular</button>
+      <p id="resultado" name="r1">Resultado</p>
+      <br>
+      <h2>Semanas de Gestacion</h2>
+      Sdg<input type="text" class="form-control form-control-sm" id="sdg" name="sdg" placeholder="Semanas de gestacion">
+      <br>
+      <button type="button" id="Solve" class="btn btn-primary" onClick="selec(this)">Calcular</button>
+      <p id="resultado" name="r1">Resultado</p>
+    </div>
+  </div>
+  -->
+</body>
+
+</html>
