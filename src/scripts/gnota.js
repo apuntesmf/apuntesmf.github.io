@@ -1,3 +1,4 @@
+
 function gyo(){
     if(document.getElementById("sexo").value == "femenino"){
         const selec = document.querySelector('.container-gyo');
@@ -93,43 +94,44 @@ function calc(form){
     }
 
 }
+
 function calc2(form){
     
-    var medicamento = document.getElementById("medicamento").value;
-    var A = document.getElementById("peso").value;
-    var B = document.getElementById("mg").value;
-    var C = document.getElementById("ml").value;
-    var D = document.getElementById("dosis").value;
-    var E = document.getElementById("hrs").value;
-    var F = "0";
-
-    if(A>=40){
-        let L = medicamento + " tomar "+ B + " mg " + D + " cada " + E + " por " + document.getElementById("dias").value+" dias";
-        var text= document.getElementById("plan");
+    let medicamento ={
+        nombre: document.getElementById("medicamento").value,
+        mg: document.getElementById("mg").value,
+        ml: document.getElementById("ml").value,
+        dosis: document.getElementById("dosis").value,
+        horas: document.getElementById("horario").value,
+        dia:document.getElementById("dias").value
+    }
+    if (document.getElementById("peso").value >= 40){
+        var L = medicamento.nombre +" "+ medicamento.mg + " mg  cada "+ medicamento.horas +"hrs por "+medicamento.dia+" días";
+        var text= document.getElementById("final");
         text.value += L+"\n";
         return false;
     }
-    else if (A<40){
+    else{
         if (document.getElementById("dia").checked){
-            var F = (((A * D) * (C) / B)/E);
+            var A = document.getElementById("peso").value;
+            var F = (((A * medicamento.dosis) * (medicamento.ml) / medicamento.mg) / medicamento.horas);
             var F = F.toFixed(2)
-            var L = medicamento +" "+ F + " ml  cada "+ E +"hrs por "+document.getElementById("dias").value+" dias";
+            var L = medicamento.nombre + " " +medicamento.mg + " mg/" + medicamento.ml +" ml, tomar "+ F + " ml  cada "+ medicamento.horas +"hrs por "+medicamento.dia+" días";
             var text= document.getElementById("plan");
             text.value += L+"\n";
             return false;
         }
         else{
-            var F = (((A * D) * C) / B);
+            var A = document.getElementById("peso").value;
+            var F = (((A * medicamento.dosis) * medicamento.ml) / medicamento.mg);
             var F = F.toFixed(2)
-            var L = medicamento +" "+B+"/"+C+ " " + F + " ml  cada "+ E +"hrs por "+document.getElementById("dias").value+" dias";
+            var L = medicamento.nombre + " " + medicamento.mg+ " mg/" + medicamento.ml +" ml, tomar "+F+ " ml  cada "+ medicamento.horas +"hrs por "+medicamento.dia+" días";
             var text= document.getElementById("plan");
             text.value += L+"\n";
             return false;
         }
 
     }
-    
-
 }
 
 function download(){
@@ -145,4 +147,4 @@ function download(){
     document.body.appendChild(anchor);
     anchor.click();
     document.body.removeChild(anchor);
- }
+}
