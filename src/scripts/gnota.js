@@ -33,18 +33,18 @@ function indicaciones(form){
 
     if (document.getElementById("alarma").value == "Deshidratacion"){
         var text= document.getElementById("plan");
-        text.value += "Medidas generales:\n"+"Datos de alarma(llanto sin lagrimas, hundimiento de ojos,irritabilidad, boca y lengua seca, no presenta micciones)."+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familair en caso de continuar con sintomatologia."; 
+        text.value += "Medidas generales:\n"+"Datos de alarma (llanto sin lágrimas, hundimiento de ojos, irritabilidad, boca y lengua seca, no presenta micciones)."+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familiar en caso de continuar con sintomatología."; 
     }else if(document.getElementById("alarma").value == "Respiratoria"){
         var text= document.getElementById("plan");
-        text.value += "Medidas generales:\n"+"Datos de alarma(disnea, sibnilancias, piel que se unde entre costillas, cambio de coloracion de unas y labios). "+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familair en caso de continuar con sintomatologia.";
-    }else if(document.getElementById("alarma").value == "Obstetrica"){
+        text.value += "Medidas generales:\n"+"Datos de alarma (disnea, sibilancias, piel que se hunde entre costillas, cambio de coloración de unas y labios). "+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familiar en caso de continuar con sintomatología.";
+    }else if(document.getElementById("alarma").value == "Obstetricas"){
         var text= document.getElementById("plan");
-        text.value += "Medidas generales:\n"+"Datos de alarma(Sangrado vaginal,  convulsiones, falta de motilidad fetal, fiebre, dolor de cabeza, ver luces, escuchar zumbidos, dolor abdominal.) "+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familair en caso de continuar con sintomatologia.";
+        text.value += "Medidas generales:\n"+"Datos de alarma (Sangrado vaginal,  convulsiones, falta de motilidad fetal, fiebre, dolor de cabeza, ver luces, escuchar zumbidos, dolor abdominal.)"+ "\nCita abierta a urgencias en caso de presentar datos de alarma."+"\nSeguimiento con medico familiar en caso de continuar con sintomatología.";
     }
 }
 
 function calc(form){
-    var A = document.getElementById("peso").value;
+    var A = document.getElementById("kg").value;
     var B = document.getElementById("ml").value;
     var C = document.getElementById("hrs").value;
     var D = "0";
