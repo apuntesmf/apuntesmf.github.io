@@ -14,6 +14,15 @@
 .logo{
     color:white;
 }
+.menu{
+    display: flex;
+    justify-content: center;
+    background-color: #24252A;
+}
+.menu li{
+    margin: 2rem;
+    margin-bottom: 0;
+}
 .nav_links{
     list-style: none;
 }
@@ -62,7 +71,8 @@
 }
 #menu-nota{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    padding: 1rem;
     flex: 1;
 }
 .container-embarazo{
@@ -144,6 +154,7 @@
     align-items: center;
     flex-wrap: wrap;
     flex: 1;
+    padding: 1rem;
 }
 .separador1{
     display: flex;
@@ -250,6 +261,18 @@ tr:nth-child(even) {
     position: -webkit-sticky;
     top: 0px;
     height: 120px;
+}
+#stik3{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    width: auto;
+}
+#stik4{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 100px;
+    width: auto;
 }
 #selector{
     background-color: #dddddd;
