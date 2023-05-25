@@ -55,6 +55,16 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.container-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu-nota{
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+}
 .container-embarazo{
     display: flex;
     justify-content: space-around;
@@ -126,6 +136,18 @@
     align-items: center;
     flex-wrap: wrap;
     flex: 1;
+}
+.datos-analisis{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.separador1{
+    display: flex;
+    flex-direction: column;
 }
 .container-manejo{
     display: flex;
@@ -286,4 +308,16 @@ tr:nth-child(even) {
 }
 h1{
     color: white;
+}
+
+.contenedor {
+    display: flex;
+}
+.contenedor-servicios{
+    display:flex;
+    justify-content: space-evenly;
+}
+.contenedor-servicios p{
+    width: 21rem;
+    text-align: justify;
 }
