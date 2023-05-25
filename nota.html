@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,9 +35,11 @@
     <div class="titulo"><h1>Nota</h1></div>
   </header>
 
+  
+
   <div class="contenedor-identificacion">
     <div class="datos-identificacion">
-      <h5>Datos personales</h5>
+      <h2>Datos personales</h2>
       <p>Nombre:<input type="text" class="form-control form-control-sm" id="nombre" name="nombre" placeholder="Nombre"></p>
       <p>Apellido Paterno:<input type="text" class="form-control form-control-sm" id="apellido-paterno" name="apellido-paterno" placeholder="Apellido-paterno"></p>
       <P>Apellido Materno:<input type="text" class="form-control form-control-sm" id="apellido-materno" name="apellido-materno" placeholder="Apellido materno"></P>
@@ -55,9 +57,25 @@
     </div>
   </div>
 
-  <div class="container-antecedentes">
-    <p><h5>Antecedentes Personales Patologicos</h5></p><br>
-    <div class="datos-pp">
+  <div class="w3-bar w3-black" id="menu-nota">
+    <div>
+      <button class="w3-bar-item w3-button" onclick="openCity('antecedente')">Antecedentes</button>
+    </div>
+    <div>
+      <button class="w3-bar-item w3-button" onclick="openCity('pa')">Padecimiento Actual</button>
+    </div>
+    <div>
+      <button class="w3-bar-item w3-button" onclick="openCity('exploracion')">Exploracion fisica</button>
+    </div>
+    <div>
+      <button class="w3-bar-item w3-button" onclick="openCity('manejo')">Analisis</button>
+    </div>
+  </div>
+  
+
+  <div id="antecedente" class="w3-container historial">
+    <p><h2>Antecedentes Personales Patologicos</h2></p><br>
+    <div class="datos-pp" >
       <div clas="separador1">
         <p>Alergias:</p>
         <textarea id="alergia" name="alergia" rows="2" cols="30">Alergias negadas, </textarea>
@@ -75,20 +93,20 @@
         <textarea id="transfusion" name="transfusion" rows="2" cols="30">transfusiones negadas.</textarea>
       </div>
     </div>
-    <p><h5>Antecedentes Personales No Patologicos</h5></p><br>
-    <div class="datos-pnp">
-      <p>Etilismo:</p>
-      <textarea id="etilismo" name="etilismo" rows="2" cols="30">Etilismo negado, </textarea>
-      <p>Tabaquismo:</p>
-      <textarea id="tabaquismo" name="tabaquismo" rows="2" cols="30">tabaquismo negado, </textarea>
-      <P>Toxicomanias:</P>
-      <textarea id="toxico" name="toxico" rows="2" cols="30">toxicomanias negadas.</textarea>
+    <p><h2>Antecedentes Personales No Patologicos</h2></p><br>
+    <div class="apnp" >
+      <div class="datos-pnp">
+        <p>Etilismo:</p>
+        <textarea id="etilismo" name="etilismo" rows="2" cols="30">Etilismo negado, </textarea>
+        <p>Tabaquismo:</p>
+        <textarea id="tabaquismo" name="tabaquismo" rows="2" cols="30">tabaquismo negado, </textarea>
+        <P>Toxicomanias:</P>
+        <textarea id="toxico" name="toxico" rows="2" cols="30">toxicomanias negadas.</textarea>
+      </div>
     </div>
-
     <div class="container-gyo">
       <p><h5>Antecedentes GyO</h5></p>
       <div class="datos-g">
-        
         <div>
           <p>Menarca: </p>
           <textarea id="menarca" name="menarca" rows="1" cols="5"></textarea>
@@ -116,14 +134,16 @@
       </div>
     </div>
   </div>
-  
-  <div class="container-analisis">
-    <h5>Padecimiento Actual:</h5>
-    <textarea id="pa" name="pa" rows="10" cols="50"></textarea>
-    
   </div>
-  
-  <div class="container-vef">
+    
+  <div id="pa" class="w3-container historial" style="display:none">
+    <div class="container-titulo">
+      <div><h2>Padecimiento Actual:</h2></div>
+      <textarea id="pad" name="pad" rows="15" cols="80"></textarea>
+    </div>
+  </div>
+    
+  <div id="exploracion" class="w3-container historial" style="display:none">
     <div class="datos-ef">
       <div clas="separador1">
         <p>Neurologico:</p>
@@ -140,8 +160,7 @@
         <textarea id="torax" name="torax" rows="3" cols="30">tórax simétrico, campos pulmonares ventilados, murmullo vesicular presente sin presencia de estertores ni sibilancias, ruidos cardiacos rítmicos de buena intensidad sin ruidos agregados, </textarea>
         <P>Abdomen:</P>
         <textarea id="abdomen" name="abdomen" rows="3" cols="30">abdomen blando depresible, peristaltismo presente, sin datos de irritación peritoneal, </textarea>
-      </div>
-
+      </div>   
       <div clas="separador1">
         <P>Genitales:</P>
         <textarea id="genitales" name="genitales" rows="3" cols="30">exploración diferida, </textarea>
@@ -149,47 +168,42 @@
         <textarea id="extremidad" name="extremidad" rows="3" cols="30">extremidades integras, arcos de movimiento conservados, llenado capilar inmediato.</textarea>
       </div>
     </div>
-
   </div>
-  <div class="container-analisis">
+
+  <div class="w3-container historial" id="manejo" style="display:none">
     <div class="datos-analisis">
-      <h5>Analisis</h5>
+      <h2>Analisis</h2>
       <div class="separador1">
         <p>Analisis:</p>
         <textarea id="analisis" name="analisis" rows="10" cols="50"></textarea>
-      </div>
-      <div class="separador1">
         <p>Diagnostico:</p>
         <textarea id="idx" name="idx" rows="2" cols="50"></textarea>
       </div>
-    </div>
-  </div>
-  <div class="container-manejo">
-    <p><h5>Actual:</h5></p>
-    <div class="separador">
-      <div class="boton-contenedor">
-        <P><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-          Medicamento e indicaciones
-        </a>
-      <p><button type="button" class="btn btn-primary" onClick="nota(this)">Generar nota</button></p>
-      <p><button type="button" class="btn btn-primary" onclick="download()">Salvar nota</button></p>
-      </div>
-    </div>
-    <div class="datos-manejo">
-      <div clas="separador1">
+      <div clas="separador2">
         <P>Plan:</P>
         <textarea id="plan" name="plan" rows="15" cols="50"></textarea>
       </div>
-      <div clas="separador1">
+      <div clas="separador3">
         <p>Nota:</p>
         <textarea id="final" name="final" rows="15" cols="50"></textarea>
       </div>
-      
+
+      <div class="container-manejo">
+        <p><h2>Opciones:</h2></p>
+        <div class="separador">
+          <div class="boton-contenedor">
+            <P><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Medicamento e indicaciones</a>
+            <p><button type="button" class="btn btn-primary" onClick="nota(this)">Generar nota</button></p>
+            <p><button type="button" class="btn btn-primary" onclick="download()">Salvar nota</button></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <h2 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h2>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
