@@ -1,13 +1,3 @@
-
-function gyo(){
-    if(document.getElementById("sexo").value == "femenino"){
-        const selec = document.querySelector('.container-gyo');
-        const div = document.createElement('div');
-        div.classList('id','thediv');
-    }
-    
-}
-
 function nota(form){
     var nombre1 = document.getElementById("nombre").value+ document.getElementById("apellido-paterno").value+ document.getElementById("apellido-materno").value;
     var dato = "\n\n" + document.getElementById("edad").value +" \n"+ document.getElementById("sexo").value + " \n" +document.getElementById("peso").value + "kg";
@@ -157,3 +147,43 @@ function openTap(datosTap) {
     }
     document.getElementById(datosTap).style.display = "block"; 
   }
+/*
+function intento(){
+    let prueba = document.getElementById("sexo").value;
+    if (prueba == "femenino"){
+        const novo = document.createElement("DIV");
+        novo.classList = "container-gyo";
+        const tit = document.createElement("H2");
+        const titext = document.createTextNode("Antecedentes GyO");
+        tit.appendChild(titext);
+        document.getElementById("antecedente").appendChild(novo);
+        document.querySelector(".container-gyo").appendChild(tit);
+        const contenedordatosg = document.createElement("DIV");
+        contenedordatosg.classList = "datos-g";
+        document.querySelector(".container-gyo").appendChild(contenedordatosg);
+        const segundodiv=document.createElement("DIV");
+        segundodiv.classList = "selector";
+        document.querySelector(".datos-g").appendChild(segundodiv);
+
+        const texto = document.createElement("P");
+        const valor = document.createTextNode("Menarca: ");
+        texto.appendChild(valor);
+        document.querySelector(".selector").appendChild(texto);
+        
+        const textarea= document.createElement("TEXTAREA");
+        textarea.classList="ivsa";
+        textarea.setAttribute("id", "ivsa");
+        textarea.setAttribute("row", "1");
+        textarea.setAttribute("column", "5");
+        document.querySelector(".selector").appendChild(textarea);
+
+        const textarea2= document.createElement("TEXTAREA");
+        textarea2.classList="Menarca: ";
+        textarea2.setAttribute("id", "menarca");
+        textarea2.setAttribute("row", "1");
+        textarea2.setAttribute("column", "5");
+        document.querySelector(".selector").appendChild(textarea2);
+        console.log(novo)
+    }
+}
+*/
