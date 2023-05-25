@@ -14,7 +14,7 @@ function nota(form){
     var app = "\n\n App:\n " + document.getElementById("alergia").value + document.getElementById("enfermedades").value + document.getElementById("cirugias").value  + document.getElementById("hospitalizaciones").value  + document.getElementById("traumatismo").value + document.getElementById("transfusion").value;  
     var apnp = "\n\n Apnp:\n " + document.getElementById("etilismo").value + document.getElementById("tabaquismo").value + document.getElementById("toxico").value ;  
     var gine = "\n\n Gyo: \n " + "Menarca:" + " " + document.getElementById("menarca").value + " " + "Ivsa:" + document.getElementById("ivsa").value + " " + "Npsa:" + document.getElementById("npsa").value + " " +"Gestas:" + document.getElementById("gesta").value + " " + "Partos:" + document.getElementById("parto").value + " " + "Cesareas:" + document.getElementById("cesarea").value + " " + "Aborto:"+ document.getElementById("aborto").value + " " + "Citologia:" + document.getElementById("citologia").value + " " + "Fum:" + document.getElementById("fum").value;
-    var pa = "\n\n Pa:\n " + document.getElementById("pa").value;
+    var pa = "\n\n Pa:\n " + document.getElementById("pad").value;
     var ef="\n\n Ef:\n " + document.getElementById("neuro").value + document.getElementById("piel").value + document.getElementById("cabeza").value + document.getElementById("cuello").value + document.getElementById("torax").value + document.getElementById("abdomen").value + document.getElementById("genitales").value + document.getElementById("extremidad").value;
     var analisis="\n\n Analisis:\n "+ document.getElementById("analisis").value;
     var dx="\n\n Diagnostico:\n "+ document.getElementById("idx").value;
@@ -148,3 +148,12 @@ function download(){
     anchor.click();
     document.body.removeChild(anchor);
 }
+
+function openTap(datosTap) {
+    var i;
+    var x = document.getElementsByClassName("historial");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    document.getElementById(datosTap).style.display = "block"; 
+  }
