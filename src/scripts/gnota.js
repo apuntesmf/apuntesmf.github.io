@@ -85,8 +85,8 @@ function calc(form){
 
 }
 
+
 function calc2(form){
-    
     let medicamento ={
         nombre: document.getElementById("medicamento").value,
         mg: document.getElementById("mg").value,
@@ -96,8 +96,8 @@ function calc2(form){
         dia:document.getElementById("dias").value
     }
     if (document.getElementById("peso").value >= 40){
-        var L = medicamento.nombre +" "+ medicamento.mg + " mg  cada "+ medicamento.horas +"hrs por "+medicamento.dia+" días";
-        var text= document.getElementById("final");
+        var L = medicamento.nombre +" "+ medicamento.mg + " mg, tomar " + medicamento.dosis + " cada " + medicamento.horas +"hrs por "+medicamento.dia+" días";
+        var text= document.getElementById("plan");
         text.value += L+"\n";
         return false;
     }
