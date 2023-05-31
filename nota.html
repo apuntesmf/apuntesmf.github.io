@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="src/estilo.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
-  <script src="src/scripts/gnota.js"></script>
   <title>ApuntesMF</title>
 </head>
 
@@ -76,7 +75,7 @@
         <p>Enfermedades:</p>
         <textarea id="enfermedades" name="enfermedades" rows="2" cols="30">enfermedades negadas, </textarea>
         <P>Cirugias:</P>
-        <textarea id="cirugias" name="cirugias" rows="2" cols="30">cirugias negadas, </textarea>
+        <textarea id="cirugias" name="cirugias" rows="2" cols="30">cirugías negadas, </textarea>
       </div>
       <div clas="separador2">
         <P>Hospitalizaciones:</P>
@@ -151,7 +150,7 @@
         <P>Cuello:</P>
         <textarea id="cuello" name="cuello" rows="3" cols="30">cuello cilíndrico sin presencia de adenomegalias, </textarea>
         <P>Torax:</P>
-        <textarea id="torax" name="torax" rows="3" cols="30">tórax simétrico, campos pulmonares ventilados, murmullo vesicular presente sin presencia de estertores ni sibilancias, ruidos cardiacos rítmicos de buena intensidad sin ruidos agregados, </textarea>
+        <textarea id="torax" name="torax" rows="3" cols="30">tórax simétrico, campos pulmonares ventilados, murmullo vesicular presente sin presencia de estertores ni sibilancias, ruidos cardíacos rítmicos de buena intensidad sin ruidos agregados, </textarea>
         <P>Abdomen:</P>
         <textarea id="abdomen" name="abdomen" rows="3" cols="30">abdomen blando depresible, peristaltismo presente, sin datos de irritación peritoneal, </textarea>
       </div>   
@@ -166,9 +165,9 @@
 
   <div class="w3-container historial" id="manejo" style="display:none">
     <div class="datos-analisis">
-      <h2>Analisis</h2>
+      <h2> Análisis</h2>
       <div class="separador1">
-        <p>Analisis:</p>
+        <p>Análisis:</p>
         <textarea id="analisis" name="analisis" rows="10" cols="50"></textarea>
         <p>Diagnostico:</p>
         <textarea id="idx" name="idx" rows="2" cols="50"></textarea>
@@ -176,7 +175,7 @@
           <p><h2>Opciones:</h2></p>
           <div class="separador">
             <div class="boton-contenedor">
-              <P><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Medicamento e indicaciones</a>
+              <P><a class="btn btn-primary" id="prueba" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Medicamento e indicaciones</a>
               <p><button type="button" class="btn btn-primary" onClick="nota(this)">Generar nota</button></p>
               <p><button type="button" class="btn btn-primary" onclick="download()">Salvar nota</button></p>
             </div>
@@ -194,18 +193,24 @@
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-      <h2 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h2>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div class="calculo">
         <h2>Medicamentos</h2>
-        Medicamento<input type="text" class="form-control form-control-sm" id="medicamento" name="medicamento" placeholder="Medicamento">
-        Mg<input type="text" class="form-control form-control-sm" id="mg" name="mg" placeholder="mg">
-        Ml<input type="text" class="form-control form-control-sm" id="ml" name="ml" placeholder="ml">
-        Dosis<input type="text" class="form-control form-control-sm" id="dosis" name="dosis" placeholder="dosis">
-        Horario<input type="text" class="form-control form-control-sm" id="horario" name="horario" placeholder="Veces al dia">
-        Dias<input type="text" class="form-control form-control-sm" id="dias" name="dias" placeholder="dias">
+        <P id="med">Medicamento<input type="text" class="form-control form-control-sm" id="medicamento" name="medicamento" placeholder="Medicamento"></P>
+        <P id="miligamos">Mg<input type="text" class="form-control form-control-sm" id="mg" name="mg" placeholder="mg"></P>
+        <p id="mililitros">Ml<input type="text" class="form-control form-control-sm" id="ml" name="ml" placeholder="ml"></p>
+        <P id="veces">Dosis<input type="text" class="form-control form-control-sm" id="dosis" name="dosis" placeholder="dosis o cantidad"></P>
+        <P>Horario
+          <select class="form-select" id="horario" name="horario"">
+            <option>6 hrs</option>
+            <option>8 hrs</option>
+            <option>12 hrs</option>
+            <option>24 hrs</option>
+          </select>
+        </P>
+        <P>Dias<input type="text" class="form-control form-control-sm" id="dias" name="dias" placeholder="dias"></P> 
         <input type="radio" class="form-check-input" id="dia" name="optradio" value="option1" checked>Dia
         <input type="radio" class="form-check-input" id="dosis" name="optradio" value="option2" checked>Dosis<br><br>
         <button type="button" id="Solve" class="btn btn-primary" onClick="calc2(this)">Agregar</button>
@@ -232,4 +237,5 @@
     </div>
   </div>
 </body>
+<script src="src/scripts/gnota.js"></script>
 </html>
