@@ -9,13 +9,13 @@ function nota(form){
     var analisis="\n\n Analisis:\n "+ document.getElementById("analisis").value;
     var dx="\n\n Diagnostico:\n "+ document.getElementById("idx").value;
     var plan="\n\n Plan:\n "+ document.getElementById("plan").value+"\n";
-    var text= document.getElementById("final");
+    var text= document.getElementById("finalmod");
     
     
     if(document.getElementById("sexo").value == "femenino"){
-        text.value = nombre1 + dato + app + apnp + gine + pa + ef + analisis+dx+plan;
+        text.value = nombre1 + dato + pa + app + apnp + gine + ef + analisis+dx+plan;
     }else{
-        text.value = nombre1 + dato + app + apnp + pa + ef + analisis+dx+plan;
+        text.value = nombre1 + dato + pa + app + apnp + ef + analisis+dx+plan;
     }
 }
 
@@ -96,7 +96,7 @@ function calc2(form){
         dia:document.getElementById("dias").value
     }
     if (document.getElementById("peso").value >= 40){
-        var L = medicamento.nombre +" "+ medicamento.mg + " mg, tomar " + medicamento.dosis + " cada " + medicamento.horas +" por "+medicamento.dia+" días";
+        var L = medicamento.nombre +" "+ medicamento.mg + " mg, tomar " + medicamento.dosis + " cada " + medicamento.horas +" por "+medicamento.dia+" días.";
         var text= document.getElementById("plan");
         text.value += L+"\n";
         return false;
@@ -139,7 +139,7 @@ function calc2(form){
             var A = document.getElementById("peso").value;
             var F = (((A * medicamento.dosis) * medicamento.ml) / medicamento.mg);
             var F = F.toFixed(2)
-            var L = medicamento.nombre + " " + medicamento.mg+ " mg/" + medicamento.ml +" ml, tomar "+F+ " ml  cada "+ medicamento.horas +" por "+medicamento.dia+" días";
+            var L = medicamento.nombre + " " + medicamento.mg+ " mg/" + medicamento.ml +" ml, tomar "+F+ " ml  cada "+ medicamento.horas +" por "+medicamento.dia+" días.";
             var text= document.getElementById("plan");
             text.value += L+"\n";
             return false;
@@ -150,7 +150,7 @@ function calc2(form){
 
 function download(){
     var nombre1 = document.getElementById("nombre").value+ document.getElementById("apellido-paterno").value+ document.getElementById("apellido-materno").value;
-    var text = document.getElementById("final").value;
+    var text = document.getElementById("finalmod").value;
     text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
     var blob = new Blob([text], { type: "text/plain"});
     var anchor = document.createElement("a");
