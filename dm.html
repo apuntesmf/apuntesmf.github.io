@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head class="head">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+        <script src="src/scripts/ckd.js"></script>
+        <link rel="stylesheet" href="src/fcronico.css">
+        <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
+        <title>ApuntesMf</title>
+    </head>
+    <body>
+        <main class="contenedor">
+            <header class="menu-h">
+                <nav class="menu">
+                    <h1 class="titulo-principal">Diabetes Mellitus</h1>
+                    <ul class="nav_links">
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">Pediatria</a>
+                            <div class="dropdown-content">
+                                <a href="medicamentos.html">Medicamentos</a>
+                                <a href="liquidos.html">Manejo de liquidos</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">Recomendaciones</a>
+                            <div class="dropdown-content">
+                                <a href="dm.html">Diabetes Mellitus</a>
+                                <a href="#">Hipertension arterial</a>
+                            </div>
+                        </li>
+                        <li><a href="embarazo.html">Embarazo</a></li>
+                        <li><a href="programa.html">Programa</a></li>
+                        <li><a href="recomendaciones.html">Archivos</a></li>
+                        <li><a href="nota.html">Notas</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="deteccion-dm">
+                <p><h3 class="subtitulo">Manejo de pacientes con diagnóstico inicial</h3></p>
+                <p> <img src="src/img/algoritmodm1.png" alt="algoritmo manejo de primera vez" width="500" height="500"> </p>
+            </div>
+            <section class="control">
+                <p><h3>Metas de control:</h3></p>
+                <ul>
+                    <li>HbA1c menor o igual que 7%.</li>
+                    <li>Glucosa en ayuno 80-130 mg/dL.</li>
+                    <li>Glucosa postprandial a las 2 hrs menor de 180 mg/dL.</li>
+                </ul>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-especial">Metas en casos especiales</button>
+            </section>
+            <section class="info1">
+                <p><h3 class="subtitulo2">Terapia dual:</h3></p>
+                <p class="informacion">Al iniciar la terapia dual, se recomienda buscar fragilidad en el paciente, red de apoyo y revisar la tasa de <a href="#filtrado-renal">filtrado glomerular</a> para realizar modificación de tratamiento u otorgar el tratamiento apropiado.</p>
+            </section>
+            <div class="img-dual">
+                <p> <img src="src/img/trat_dual.png" alt="algoritmo manejo dual" width="500" height="500"> </p>
+            </div>
+            <section class="ckdepi">
+               <h3 id ="filtrado-renal">Filtrado glomerular</h3>
+               <div>
+                    <P>
+                        Sexo:
+                        <select class="form-select form-select-sm mt-3" id="sexo" name="sexo" >
+                            <option>masculino</option>
+                            <option>femenino</option>
+                        </select>
+                    </P>
+                    <P>Edad:<input type="text" class="form-control form-control-sm" id="edad" name="edad" placeholder="Edad"></P>
+                    <P>Creatinina serica:<input type="text" class="form-control form-control-sm" id="creatinina" name="creatinina" placeholder="Creatinina serica"></P>
+                    <p><button type="button" onClick="fg()">Calcular</button></p>
+                    <p id="resultado" name="r1">Resultado</p>
+                    <p id="grado">Grado</p>
+                </div>
+                <div>
+                    <p>Modificaciones</p>
+                    <p id="mod" name="mod"></p>
+
+                </div>
+            </section>
+            <section class="hipoglicemia">
+                <div>
+                    <p><img src="src/img/hipogli.png" alt="algoritmo hipoglicemia" width="500" height="500"> </p>
+                </div>
+            </section>
+            <section class="info2">
+                <p><h3 class="subtitulo2">Uso de insulina:</h3></p>
+                <p><h3 class="subtitulo2">NPH Nocturna</h3></p>
+                <table>
+                    <tr >
+                        <th>Glucemia</th>
+                        <th>Modificación</th>
+                    </tr>
+                    <tr>
+                        <td> mayor o igual 130-180 mg/dl</td>
+                        <td>Aumentar 1 UI</td>
+                    </tr>
+                    <tr>
+                        <td> mayor 180 mg/dl</td>
+                        <td>Aumentar 2 UI</td>
+                    </tr>
+                    <tr>
+                        <td> menor 80 mg/dl</td>
+                        <td>Disminuir 2 UI</td>
+                    </tr>
+                </table>
+                <p><h3 class="subtitulo2">NPH Matutina</h3></p>
+                <table>
+                    <tr >
+                        <th>Glucemia</th>
+                        <th>Modificación</th>
+                    </tr>
+                    <tr>
+                        <td> mayor o igual 160 mg/dl</td>
+                        <td>Aumentar 2 UI</td>
+                    </tr>
+                    <tr>
+                        <td> mayor 210 mg/dl</td>
+                        <td>Aumentar 4 UI</td>
+                    </tr>
+                    <tr>
+                        <td> menor 80 mg/dl</td>
+                        <td>Disminuir 2 UI</td>
+                    </tr>
+                </table>
+                <p><h3 class="subtitulo2">Glargina</h3></p>
+                <table>
+                    <tr >
+                        <th>Glucemia</th>
+                        <th>Modificación</th>
+                    </tr>
+                    <tr>
+                        <td> mayor o igual 180 mg/dl</td>
+                        <td>Aumentar 1 UI</td>
+                    </tr>
+                    <tr>
+                        <td> mayor 210 mg/dl</td>
+                        <td>Aumentar 2 UI</td>
+                    </tr>
+                    <tr>
+                        <td> menor 120 mg/dl</td>
+                        <td>Disminuir 1 UI</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="info1">
+            </section>
+            <div class="hipogli">
+                <p><img src="src/img/insulina.png" alt="algoritmo hipoglicemia" width="500" height="500"></p>
+            </div>
+        </main>
+
+        <!-- modal que presenta las metas de casos especiales-->
+        <div class="modal" id="modal-especial">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Casos especiales</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="tablas">
+                        <table>
+                            <tr>
+                                <th>Grupo</th>
+                                <th>Descripcion</th>
+                                <th>Meta</th>
+                            </tr>
+                            <tr>
+                                <td>Grupo 1</td>
+                                <td>Estadio  3A o 3B, o adulto mayor de 65, funcional(buen estado de salud).</td>
+                                <td>HbA1c menor a 7.5%.<br>Glucosa en ayuno de 90 a 130 mg/dL.<br>Glucosa pre-cena de 100-180 mg/dL.</td>
+                            </tr>
+                            <tr>
+                                <td>Grupo 2</td>
+                                <td>Estadio 4, o adulto mayor de 65, funcional dependiente con (3 o más enfermedades crónicas, o con fragilidad o deterioro cognoscitivo leve).</td>
+                                <td>HbA1c menor a 8%.<br>Glucosa en ayuno de 100 a 150 mg/dL.<br>Glucosa pre-cena de 150-180 mg/dL.</td>
+                            </tr>
+                            <tr>
+                                <td>Grupo 3</td>
+                                <td>Estadio 5, paciente terminal o mayor de 65 con fragilidad, comorbilidades, demencia moderada a grave.</td>
+                                <td>HbA1c menor a 8.5%.<br>Glucosa en ayuno de 100 a 180 mg/dL.<br>Glucosa pre-cena de 150-250 mg/dL.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
